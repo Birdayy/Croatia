@@ -1,0 +1,69 @@
+* {
+    overflow: hidden;
+
+}
+
+.titletext1 {
+    text-align: center;
+    font-size: 50px;
+    color: red;
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 100px;
+}
+
+.titletext2 {
+    text-align: center;
+    font-size: 50px;
+    color: blue;
+    position: absolute;
+    margin-left: 228px;
+    margin-top: 100px;
+}
+
+.croatiahomepage {
+    position: absolute;
+    margin-top: 209px;
+    margin-left: 5px;
+    
+}
+.container{
+    width: 200px;
+    height: 120px;
+}
+.container img{
+    width: 80%;
+    height: auto;
+}
+.container2{
+    width: 200px;
+    height: 120px;
+}
+.container2 img{
+    width: 96%;
+    height: auto;
+}
+.europehomepage {
+    position: absolute;
+    margin-top: 126px;
+    margin-left: 200px;
+}
+
+html{
+    background-color: white;
+}
+#wrapper{
+    width:440px;
+    margin: auto;
+}
+#maincontent{
+    width:260px;
+    float: left;
+}
+aside{
+    width: 160px;
+    float: right;
+}
+footer{
+    clear: both;
+}

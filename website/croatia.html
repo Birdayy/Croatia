@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Croatia</title>
+
+</head>
+
+<body>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="croatia.html">Croatia</a></li>
+        <li><a href="europe.html">Europe</a></li>
+
+    </ul>
+    <h1>Croatia</h1>
+
+    <div class="row">
+        <div class="column">
+            <img src="Marina.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+        </div>
+        <div class="column">
+            <img src="Sunset.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+        </div>
+        <div class="column">
+            <img src="Islands.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+        </div>
+        <div class="column">
+            <img src="Town.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+        </div>
+    </div>
+    <div class="row">
+        <br>
+        <br>
+        <div class="column">
+            <img src="Waterline.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+        </div>
+        <div class="column">
+            <img src="View.jpg" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+        </div>
+        <div class="column">
+            <img src="Sunset2.jpg" style="width:100%" onclick="openModal();currentSlide(7)" class="hover-shadow cursor">
+        </div>
+        <div class="column">
+            <img src="Boats.jpg" style="width:100%" onclick="openModal();currentSlide(8)" class="hover-shadow cursor">
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+
+            <div class="mySlides">
+                <div class="numbertext">1 / 8</div>
+                <img src="Marina.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 8</div>
+                <img src="Sunset.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 8</div>
+                <img src="Islands.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">4 / 8</div>
+                <img src="Town.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">5 / 8</div>
+                <img src="Waterline.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">6 / 8</div>
+                <img src="View.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">7 / 8</div>
+                <img src="Sunset2.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">8 / 8</div>
+                <img src="Boats.jpg" style="width:100%">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+
+            <div class="column">
+                <img class="demo cursor" src="Marina.jpg" style="width:100%" onclick="currentSlide(1)" alt="Marina">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="Sunset.jpg" style="width:100%" onclick="currentSlide(2)" alt="Sunset">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="Islands.jpg" style="width:100%" onclick="currentSlide(3)" alt="Islands">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="Town.jpg" style="width:100%" onclick="currentSlide(4)" alt="Town">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="Waterline.jpg" style="width:100%" onclick="currentSlide(5)" alt="Waterline">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="View.jpg" style="width:100%" onclick="currentSlide(6)" alt="View">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="Sunset2.jpg" style="width:100%" onclick="currentSlide(7)" alt="Sunset2">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="Boats.jpg" style="width:100%" onclick="currentSlide(8)" alt="Boats">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('myModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+
+    </script>
